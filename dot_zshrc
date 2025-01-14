@@ -27,4 +27,14 @@ setopt pushd_ignore_dups
 
 setopt correct
 
+# zsh aliases
+alias vz="vim ~/.zshrc"
+alias sz="source ~/.zshrc"
+alias rmf="rm -rf"
 
+# ls
+alias ll="ls -l"
+alias la="ls -a"
+
+# git
+alias g="git"
