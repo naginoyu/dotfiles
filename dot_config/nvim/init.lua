@@ -964,9 +964,13 @@ require("lazy").setup({
 		"nvimtools/none-ls.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			local none_ls = require("none-ls")
-			none_ls.setup({
-				-- Additional settings can be added here
+			local null_ls = require("null-ls")
+
+			null_ls.setup({
+				sources = {
+					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.formatting.prettier,
+				},
 			})
 		end,
 	},
@@ -980,13 +984,8 @@ require("lazy").setup({
 		},
 		config = function()
 			require("mason-null-ls").setup({
-				-- List of tools to automatically install
-				ensure_installed = {
-					"stylua", -- Lua formatter
-					"prettier", -- Prettier formatter
-				},
-				-- Enable automatic setup
-				automatic_setup = true,
+				ensure_installed = { "stylua", "prettier" },
+				automatic_installation = true,
 			})
 		end,
 	},
