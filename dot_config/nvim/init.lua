@@ -668,6 +668,12 @@ require("lazy").setup({
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
+				"prettier",
+				"eslint-lsp",
+				"eslint_d",
+				"lua-language-server",
+				"tailwindcss-language-server",
+				"typescript-language-server",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -989,6 +995,18 @@ require("lazy").setup({
 			})
 		end,
 	},
+
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup({
+				enable_close = true,
+				enable_rename = true,
+				enable_close_on_slash = false,
+			})
+		end,
+	},
+
 	--
 	--  Here are some example plugins that I've included in the Kickstart repository.
 	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
