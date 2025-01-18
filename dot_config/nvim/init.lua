@@ -47,7 +47,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
-require("keymaps")
+require("keymaps").general()
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -259,6 +259,8 @@ require("lazy").setup({
 			-- Enable Telescope extensions if they are installed
 			pcall(require("telescope").load_extension, "fzf")
 			pcall(require("telescope").load_extension, "ui-select")
+
+			require("keymaps").telescope()
 		end,
 	},
 
