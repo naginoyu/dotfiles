@@ -1,9 +1,8 @@
 local M = {}
+
 -- Vim general
-function M.general()
-	vim.keymap.set("i", ";", ":")
-	vim.keymap.set("i", "jj", "<ESC>")
-end
+vim.keymap.set("i", ";", ":")
+vim.keymap.set("i", "jj", "<ESC>")
 
 -- Telescope
 function M.telescope()
