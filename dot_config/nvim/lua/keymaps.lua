@@ -22,4 +22,8 @@ function M.telescope()
 	vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 end
 
+function M.neotree()
+	vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>")
+end
+
 return M
