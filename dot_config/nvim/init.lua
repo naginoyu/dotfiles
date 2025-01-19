@@ -760,46 +760,6 @@ require("lazy").setup({
 
 	-- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
 	--
-
-	{
-		"pmizio/typescript-tools.nvim",
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
-	},
-
-	-- none-ls.nvim configuration
-	{
-		"nvimtools/none-ls.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			local null_ls = require("null-ls")
-
-			null_ls.setup({
-				sources = {
-					null_ls.builtins.formatting.stylua,
-					null_ls.builtins.formatting.prettier,
-				},
-			})
-		end,
-	},
-
-	-- mason-null-ls.nvim configuration
-	{
-		"jay-babu/mason-null-ls.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"nvimtools/none-ls.nvim",
-		},
-		config = function()
-			require("mason-null-ls").setup({
-				ensure_installed = { "stylua", "prettier" },
-				automatic_installation = true,
-				enable_close_on_slash = false,
-			})
-		end,
-	},
-
-	--
 	--  Here are some example plugins that I've included in the Kickstart repository.
 	--  Uncomment any of the lines below to enable them (you will need to restart nvim).
 	--
@@ -811,6 +771,7 @@ require("lazy").setup({
 	require("kickstart.plugins.gitsigns"), -- adds gitsigns recommend keymaps
 
 	-- Add plugins
+	require("plugins.coding"),
 	require("plugins.ui"),
 
 	-- Plugins Keymaps
