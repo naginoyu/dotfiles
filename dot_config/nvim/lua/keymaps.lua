@@ -1,4 +1,5 @@
 local M = {}
+local opts = { noremap = true, silent = true }
 
 -- Vim general
 vim.keymap.set("n", ";", ":")
@@ -24,6 +25,12 @@ end
 
 function M.neotree()
 	vim.keymap.set("n", "<leader>ee", ":Neotree filesystem reveal left<CR>")
+end
+
+function M.barbar()
+	vim.keymap.set("n", "<C-,>", "<Cmd>BufferPrevious<CR>", opts)
+	vim.keymap.set("n", "<C-.>", "<Cmd>BufferNext<CR>", opts)
+	vim.keymap.set("n", "<C-c>", "<Cmd>BufferClose<CR>", opts)
 end
 
 return M

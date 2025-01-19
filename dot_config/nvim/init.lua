@@ -775,6 +775,7 @@ require("lazy").setup({
 	require("plugins.ui"),
 
 	-- Plugins Keymaps
+	require("keymaps").barbar(),
 	require("keymaps").neotree(),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
