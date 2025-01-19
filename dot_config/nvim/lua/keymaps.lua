@@ -33,4 +33,8 @@ function M.barbar()
 	vim.keymap.set("n", "<C-c>", "<Cmd>BufferClose<CR>", opts)
 end
 
+function M.toggleterm()
+	vim.keymap.set("t", "<C-q>", "<C-\\><C-n>:ToggleTerm<CR>", opts)
+end
+
 return M
