@@ -21,6 +21,7 @@ function M.telescope()
 	vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
 	vim.keymap.set("n", "<leader>fr", builtin.registers, {})
 	vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+	vim.keymap.set("n", "<leader>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
 end
 
 function M.neotree()
