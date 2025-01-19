@@ -760,15 +760,6 @@ require("lazy").setup({
 
 	-- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
 	--
-	-- bufferline.nvim
-	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
-		config = function()
-			require("bufferline").setup({})
-		end,
-	},
 
 	{
 		"pmizio/typescript-tools.nvim",
@@ -818,7 +809,9 @@ require("lazy").setup({
 	require("kickstart.plugins.autopairs"),
 	require("kickstart.plugins.neo-tree"),
 	require("kickstart.plugins.gitsigns"), -- adds gitsigns recommend keymaps
-	require("kickstart.plugins.lualine"),
+
+	-- Add plugins
+	require("plugins.ui"),
 
 	-- Plugins Keymaps
 	require("keymaps").neotree(),
