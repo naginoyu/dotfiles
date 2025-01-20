@@ -6,6 +6,10 @@ vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", ":", ";")
 vim.keymap.set("i", "jj", "<ESC>")
 
+vim.keymap.set("n", "<leader>v", ":vsplit<CR>", opts)
+vim.keymap.set("n", "<leader>h", ":split<CR>", opts)
+vim.keymap.set("n", "<leader>t", ":tabnew<CR>", opts)
+
 -- Telescope
 function M.telescope()
 	local builtin = require("telescope.builtin")
