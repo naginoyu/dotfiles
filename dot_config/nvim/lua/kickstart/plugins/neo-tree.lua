@@ -17,6 +17,19 @@ return {
 					["\\"] = "close_window",
 				},
 			},
+			filtered_items = {
+				visible = false,
+				hide_dotfiles = false,
+				hide_gitignored = false,
+				hide_by_name = {
+					".git",
+					"node_modules",
+					".DS_Store",
+				},
+			},
+		},
+		buffers = {
+			follow_current_file = true,
 		},
 	},
 }
