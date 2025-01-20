@@ -25,7 +25,7 @@ function M.telescope()
 end
 
 function M.neotree()
-	vim.keymap.set("n", "<leader>ee", ":Neotree filesystem reveal left<CR>")
+	vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
 end
 
 function M.barbar()
