@@ -589,6 +589,13 @@ require("lazy").setup({
 			--  into multiple repos for maintenance purposes.
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
+
+			-- Add kzm
+			"f3fora/cmp-spell",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-cmdline",
+			"onsails/lspkind.nvim",
+			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 		},
 		config = function()
