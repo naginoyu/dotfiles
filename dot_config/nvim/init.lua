@@ -589,6 +589,7 @@ require("lazy").setup({
 			--  into multiple repos for maintenance purposes.
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
+			"rafamadriz/friendly-snippets",
 		},
 		config = function()
 			-- See `:help cmp`
