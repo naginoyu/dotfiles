@@ -31,6 +31,15 @@ return {
 					".DS_Store",
 				},
 			},
+			cwd = function()
+				local buf_path = vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf())
+				local dir = vim.fn.fnamemodify(buf_path, ":h")
+				if vim.fn.isdirectory(dir) == 1 then
+					return dir
+				else
+					return vim.fn.getcwd()
+				end
+			end,
 		},
 		buffers = {
 			follow_current_file = true,
