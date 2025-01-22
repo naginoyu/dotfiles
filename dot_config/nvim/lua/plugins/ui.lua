@@ -32,22 +32,22 @@ return {
 					notify = true,
 					use_treesitter = true,
 					style = {
-						{ fg = "#806d9c" },
-						{ fg = "#c21f30" },
+						{ fg = "#7aa2f7" },
+						{ fg = "#bb9af7" },
 					},
 				},
 				indent = {
 					enable = true,
 					use_treesitter = false,
 					style = {
-						{ fg = "#806d9c" },
+						{ fg = "#7aa2f7" },
 					},
 				},
 				line_num = {
 					enable = true,
 					use_treesitter = false,
 					style = {
-						{ fg = "#806d9c" },
+						{ fg = "#7aa2f7" },
 					},
 				},
 				blank = {
@@ -56,7 +56,7 @@ return {
 						"․",
 					},
 					style = {
-						{ fg = "#806d9c" },
+						{ fg = "#7aa2f7" },
 					},
 				},
 			})
