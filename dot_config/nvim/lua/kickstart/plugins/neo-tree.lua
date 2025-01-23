@@ -36,4 +36,5 @@ return {
 			follow_current_file = true,
 		},
 	},
+	vim.cmd([[autocmd VimEnter * NeoTreeShow]]),
 }
