@@ -30,8 +30,6 @@ return {
 					},
 				},
 			})
-
-			vim.cmd([[autocmd VimEnter * NeoTreeShow]])
 		end,
 	},
 }
