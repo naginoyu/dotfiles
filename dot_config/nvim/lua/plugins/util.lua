@@ -21,6 +21,7 @@ return {
 			require("toggleterm").setup({
 				open_mapping = [[<C-p>]],
 			})
+			vim.cmd([[autocmd VimEnter * ToggleTerm]])
 		end,
 	},
 
