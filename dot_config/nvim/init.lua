@@ -714,8 +714,7 @@ require("lazy").setup({
 	require("plugins.util"),
 
 	-- Plugins Keymaps
-	require("keymaps").telescope(),
-	require("keymaps").barbar(),
+  require("keymaps").barbar(),
 	require("keymaps").neotree(),
 	require("keymaps").toggleterm(),
 
