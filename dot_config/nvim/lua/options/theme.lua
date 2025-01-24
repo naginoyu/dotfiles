@@ -5,4 +5,5 @@ return {
 		priority = 1000,
 		opts = {},
 	},
+	vim.cmd("colorscheme tokyonight"),
 }
