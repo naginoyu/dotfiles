@@ -19,7 +19,7 @@ return {
 		end,
 	},
 	{
-		"williamboman/mason-tool-installer.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		config = function()
 			require("mason-tool-installer").setup({
 				ensure_installed = {
