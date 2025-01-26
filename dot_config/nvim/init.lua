@@ -62,6 +62,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"tpope/vim-sleuth",
 
+	require("plugins.lazydev"),
 	require("options.theme"),
 
 	require("kickstart.plugins.indent_line"),
