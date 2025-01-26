@@ -13,7 +13,7 @@ return {
 					"lua_ls",
 					"html",
 					"cssls",
-					"tsserver",
+					"ts_ls",
 				},
 			})
 		end,
