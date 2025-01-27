@@ -83,6 +83,7 @@ require("lazy").setup({
 	require("plugins.coding"),
 	require("plugins.ui"),
 	require("plugins.util"),
+	require("plugins.trouble"),
 
 	-- Plugins Keymaps
 	require("keymaps").barbar(),
