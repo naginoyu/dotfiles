@@ -72,6 +72,7 @@ require("lazy").setup({
 
 	-- Add plugins
 	require("plugins.nvim-tree"),
+	require("plugins.toggleterm"),
 	require("plugins.nvim-lspconfig"),
 	require("plugins.fidget"),
 	require("plugins.mason"),
@@ -87,7 +88,6 @@ require("lazy").setup({
 
 	-- Plugins Keymaps
 	require("keymaps").barbar(),
-	require("keymaps").toggleterm(),
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
