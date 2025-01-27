@@ -68,10 +68,10 @@ require("lazy").setup({
 	require("kickstart.plugins.indent_line"),
 	require("kickstart.plugins.lint"),
 	require("kickstart.plugins.autopairs"),
-	require("kickstart.plugins.neo-tree"),
 	require("kickstart.plugins.gitsigns"),
 
 	-- Add plugins
+	require("plugins.nvim-tree"),
 	require("plugins.nvim-lspconfig"),
 	require("plugins.fidget"),
 	require("plugins.mason"),
@@ -86,7 +86,6 @@ require("lazy").setup({
 
 	-- Plugins Keymaps
 	require("keymaps").barbar(),
-	require("keymaps").neotree(),
 	require("keymaps").toggleterm(),
 }, {
 	ui = {
