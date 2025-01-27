@@ -3,11 +3,7 @@ return {
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require("trouble").setup({
-				auto_open = true,
-				auto_close = false,
-				use_diagnostic_signs = true,
-			})
+			require("trouble").setup({})
 
 			vim.api.nvim_create_autocmd("DiagnosticChanged", {
 				callback = function()
@@ -17,5 +13,6 @@ return {
 				end,
 			})
 		end,
+		vim.keymap.set("n", "<leader>w", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true }),
 	},
 }
