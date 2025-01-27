@@ -7,7 +7,7 @@ return {
 			lspconfig.lua_ls.setup({})
 			lspconfig.html.setup({})
 			lspconfig.cssls.setup({})
-			lspconfig.tsserver.setup({})
+			lspconfig.ts_ls.setup({})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(args)
