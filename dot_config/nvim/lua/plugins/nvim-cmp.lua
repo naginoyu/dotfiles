@@ -6,9 +6,12 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
+		"hrsh7th/cmp-nvim-lsp-document-symbol",
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
+		"ray-x/cmp-treesitter",
 		"onsails/lspkind-nvim",
 	},
 	config = function()
@@ -37,6 +40,9 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+				{ name = "nvim_lsp_signature_help" },
+				{ name = "nvim_lsp_document_symbol" },
+				{ name = "treesitter" },
 			}),
 			formatting = {
 				format = require("lspkind").cmp_format({
