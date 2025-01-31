@@ -14,14 +14,30 @@ return {
 			vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
 
 			local Terminal = require("toggleterm.terminal").Terminal
-			local vertical_term = Terminal:new({
+			local term1 = Terminal:new({
+				id = 1,
 				direction = "vertical",
 				size = vim.fn.floor(vim.o.columns * 0.4),
 			})
 
-			vim.keymap.set("n", "<leader>tv", function()
-				vertical_term:toggle()
-			end, { desc = "Toggle vertical terminal" })
+			local term2 = Terminal:new({
+				id = 2,
+				direction = "vertical",
+				size = vim.fn.floor(vim.o.columns * 0.4),
+			})
+
+			local function open_two_vertical_terminals()
+				term1:toggle()
+				term2:toggle()
+			end
+
+			-- キーマッピング
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>tv",
+				"<cmd>lua open_two_vertical_terminals()<CR>",
+				{ noremap = true, silent = true }
+			)
 		end,
 	},
 }
