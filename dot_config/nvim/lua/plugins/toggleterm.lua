@@ -26,7 +26,7 @@ return {
 				size = vim.fn.floor(vim.o.columns * 0.4),
 			})
 
-			local function open_two_vertical_terminals()
+			function open_two_vertical_terminals()
 				term1:toggle()
 				term2:toggle()
 			end
