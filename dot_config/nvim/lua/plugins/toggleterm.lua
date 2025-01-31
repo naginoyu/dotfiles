@@ -16,13 +16,13 @@ return {
 			local Terminal = require("toggleterm.terminal").Terminal
 			local term1 = Terminal:new({
 				id = 1,
-				direction = "vertical",
+				direction = "horizontal",
 				size = vim.fn.floor(vim.o.columns * 0.4),
 			})
 
 			local term2 = Terminal:new({
 				id = 2,
-				direction = "vertical",
+				direction = "horizontal",
 				size = vim.fn.floor(vim.o.columns * 0.4),
 			})
 
