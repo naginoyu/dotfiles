@@ -9,26 +9,9 @@ return {
 		"hrsh7th/vim-vsnip",
 	},
 	config = function()
-		-- nvim-lspconfigが読み込まれているか確認
-		local status_ok, lsp = pcall(require, "lspconfig")
-		if not status_ok then
-			vim.notify("nvim-lspconfig not found!", vim.log.levels.ERROR)
-			return
-		end
-
-		-- ddc用の専用capabilities作成
 		local ddc_capabilities = vim.lsp.protocol.make_client_capabilities()
 		ddc_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-		-- tsserver設定の再定義
-		lsp.tsserver.setup({
-			capabilities = ddc_capabilities, -- cmp連携を排除
-			on_attach = function(client, bufnr)
-				client.server_capabilities.completionProvider = false -- LSP側の補完を無効化
-			end,
-		})
-
-		-- ddc-source-lspの優先度最大化設定
 		vim.fn["ddc#custom#patch_global"]({
 			ui = "native",
 			sources = { "lsp", "around" },
@@ -55,7 +38,6 @@ return {
 			},
 		})
 
-		-- キーマッピングの再設定
 		vim.keymap.set("i", "<Tab>", function()
 			return vim.fn.pumvisible() == 1 and "<Cmd>call pum#map#insert_relative(+1)<CR>" or "<Tab>"
 		end, { expr = true })
