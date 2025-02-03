@@ -29,11 +29,16 @@ return {
 			"denops/denops.vim",
 			"Shougo/ddc-ui-native",
 			"Shougo/ddc-source-around",
+			"Shougo/ddc-filter-matcher_head",
+			"Shougo/ddc-ilter-sorter_rank",
 		},
 		config = function()
 			vim.cmd([[
 				call ddc#custom#patch_global('sources', ['lsp', 'around'])
 				call ddc#custom#patch_global('sourceOptions', {
+					\ '_': {
+					\	'matchers': ['matcher_head'],
+					\	'sorters': ['sorter_rank']},
 					\ 'around': {
 					\ 'mark': 'around'
 					\ },
