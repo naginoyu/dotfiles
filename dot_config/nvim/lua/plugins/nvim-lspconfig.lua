@@ -28,11 +28,15 @@ return {
 			"Shougo/ddc-source-lsp",
 			"denops/denops.vim",
 			"Shougo/ddc-ui-native",
+			"Shougo/ddc-source-around",
 		},
 		config = function()
 			vim.cmd([[
-				call ddc#custom#patch_global('sources', ['lsp'])
+				call ddc#custom#patch_global('sources', ['lsp', 'around'])
 				call ddc#custom#patch_global('sourceOptions', {
+					\ 'around': {
+					\ 'mark': 'around'
+					\ },
 					\ 'lsp': {
 					\   'mark': 'lsp',
 					\   'matchers': ['matcher_head'],
