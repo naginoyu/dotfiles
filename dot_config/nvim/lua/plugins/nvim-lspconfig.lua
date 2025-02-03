@@ -29,29 +29,47 @@ return {
 			"denops/denops.vim",
 			"Shougo/ddc-ui-native",
 			"Shougo/ddc-source-around",
+			"LumaKernel/ddc-source-file",
 			"Shougo/ddc-filter-matcher_head",
 			"Shougo/ddc-filter-sorter_rank",
 		},
 		config = function()
+			local capabilities = require("ddc_source_lsp").make_client_capabilities()
+			require("lspconfig").denols.setup({
+				capabilities = capabilities,
+			})
 			vim.cmd([[
-				call ddc#custom#patch_global('sources', ['lsp', 'around'])
+				call ddc#custom#patch_global('ui', 'native')
+				call ddc#custom#patch_global('sources', ['lsp', 'around', 'file'])
 				call ddc#custom#patch_global('sourceOptions', {
 					\ '_': {
-					\	'matchers': ['matcher_head'],
-					\	'sorters': ['sorter_rank']},
+					\   'matchers': ['matcher_head'],
+					\   'sorters': ['sorter_rank']},
 					\ 'around': {
-					\ 'mark': 'around'
+					\   'mark': 'A'
+					\ },
+					\ 'file': {
+					\   'mark': 'F',
+					\   'isVolatile': v:true,
+					\   'forceCompletionPattern': '\S/\S*',
 					\ },
 					\ 'lsp': {
 					\   'mark': 'lsp',
-					\   'matchers': ['matcher_head'],
-					\   'sorters': ['sorter_rank'],
-					\   'converters': ['converter_remove_overlap'],
-					\   'ignoreCase': v:true,
 					\   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
 					\ },
 					\ })
-				call ddc#custom#patch_global('ui', 'native')
+				call ddc#custom#patch_filetype(
+					\ ['ps1', 'dosbatch', 'autohotkey', 'registry'], {
+					\ 'sourceOptions': {
+					\   'file': {
+					\     'forceCompletionPattern': '\S\\\S*',
+					\   },
+					\ },
+					\ 'sourceParams': {
+					\   'file': {
+					\     'mode': 'unix',
+					\   },
+					\ })
 				call ddc#enable()
 			]])
 		end,
