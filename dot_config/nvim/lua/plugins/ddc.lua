@@ -7,8 +7,11 @@ return {
 	config = function()
 		vim.fn["ddc#custom#patch_global"]("sourceOptions", {
 			lsp = {
-				matchers = { "matcher_head" },
-				sorters = { "sorter_rank" },
+				snippetEngine = vim.fn["denops#callback#register"](function(body)
+					vim.fn["vsnip#anonymous"](body)
+				end),
+				enableResolveItem = true,
+				enableAdditionalTextEdit = true,
 			},
 		})
 	end,
