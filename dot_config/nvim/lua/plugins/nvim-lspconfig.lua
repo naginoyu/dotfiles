@@ -27,6 +27,7 @@ return {
 		dependencies = {
 			"Shougo/ddc-source-lsp",
 			"denops/denops.vim",
+			"Shougo/ddc-ui-bative",
 		},
 		config = function()
 			vim.cmd([[
@@ -41,6 +42,7 @@ return {
 					\   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
 					\ },
 					\ })
+				call ddc#custom#patch_global('ui', 'native')
 				call ddc#enable()
 			]])
 		end,

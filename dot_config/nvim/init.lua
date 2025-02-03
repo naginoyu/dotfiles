@@ -74,7 +74,6 @@ require("lazy").setup({
 	require("plugins.nvim-tree"),
 	require("plugins.toggleterm"),
 	require("plugins.nvim-lspconfig"),
-	-- require("plugins.ddc"),
 	require("plugins.fidget"),
 	require("plugins.mason"),
 	require("plugins.null-ls"),
