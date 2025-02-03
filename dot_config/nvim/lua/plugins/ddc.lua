@@ -9,8 +9,12 @@ return {
 		"hrsh7th/vim-vsnip",
 	},
 	config = function()
-		-- LSPクライアントの設定を上書き
-		local lsp = require("lspconfig")
+		-- nvim-lspconfigが読み込まれているか確認
+		local status_ok, lsp = pcall(require, "lspconfig")
+		if not status_ok then
+			vim.notify("nvim-lspconfig not found!", vim.log.levels.ERROR)
+			return
+		end
 
 		-- ddc用の専用capabilities作成
 		local ddc_capabilities = vim.lsp.protocol.make_client_capabilities()
