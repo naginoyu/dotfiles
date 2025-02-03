@@ -30,7 +30,7 @@ return {
 			"Shougo/ddc-ui-native",
 			"Shougo/ddc-source-around",
 			"Shougo/ddc-filter-matcher_head",
-			"Shougo/ddc-ilter-sorter_rank",
+			"Shougo/ddc-filter-sorter_rank",
 		},
 		config = function()
 			vim.cmd([[
