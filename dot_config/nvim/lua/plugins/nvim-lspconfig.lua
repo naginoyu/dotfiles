@@ -27,7 +27,7 @@ return {
 		dependencies = {
 			"Shougo/ddc-source-lsp",
 			"denops/denops.vim",
-			"Shougo/ddc-ui-bative",
+			"Shougo/ddc-ui-native",
 		},
 		config = function()
 			vim.cmd([[
