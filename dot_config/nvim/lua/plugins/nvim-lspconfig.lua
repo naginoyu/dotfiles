@@ -25,8 +25,8 @@ return {
 	{
 		"Shougo/ddc.vim",
 		dependencies = {
-			"Shougo/ddc-source-lsp",
 			"denops/denops.vim",
+			"Shougo/ddc-source-lsp",
 			"Shougo/ddc-ui-native",
 			"Shougo/ddc-source-around",
 			"LumaKernel/ddc-source-file",
