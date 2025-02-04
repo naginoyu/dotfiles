@@ -30,6 +30,7 @@ return {
 			"Shougo/ddc-ui-native",
 			"Shougo/ddc-source-around",
 			"LumaKernel/ddc-source-file",
+			"matsui/ddc-source-buffer",
 			"Shougo/ddc-filter-matcher_head",
 			"Shougo/ddc-filter-sorter_rank",
 		},
@@ -43,7 +44,7 @@ return {
 			-- ddc.vim の設定
 			vim.cmd([[
 				call ddc#custom#patch_global('ui', 'native')
-				call ddc#custom#patch_global('sources', ['lsp', 'around', 'file'])
+				call ddc#custom#patch_global('sources', ['lsp', 'around', 'file', 'buffer'])
 				call ddc#custom#patch_global('sourceOptions', {
 					\ '_': {
 					\   'matchers': ['matcher_head'],
@@ -57,10 +58,21 @@ return {
 					\   'isVolatile': v:true,
 					\   'forceCompletionPattern': '\S/\S*'
 					\ },
+					\ 'buffer': {
+					\   'mark': 'B'
+					\ },
 					\ 'lsp': {
 					\   'mark': 'lsp',
 					\   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
 					\ }
+					\ })
+				call ddc#custom#patch_global('sourceParams', {
+					\ 'buffer': {
+					\   'requireSameFiletype': v:false,
+					\   'limitBytes': 5000000,
+					\   'fromAltBuf': v:true,
+					\   'forceCollect': v:true,
+					\ },
 					\ })
 				call ddc#custom#patch_filetype(
 					\ ['ps1', 'dosbatch', 'autohotkey', 'registry'], {
