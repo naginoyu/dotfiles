@@ -35,7 +35,7 @@ return {
 			"Shougo/ddc-filter-matcher_head",
 			"Shougo/ddc-filter-sorter_rank",
 			"Shougo/ddc-filter-converter_remove_overlap",
-			'tani/ddc-fuzzy',
+			"tani/ddc-fuzzy",
 		},
 		config = function()
 			-- LSPクライアントの設定
