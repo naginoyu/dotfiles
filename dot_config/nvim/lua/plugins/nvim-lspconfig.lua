@@ -25,7 +25,7 @@ return {
 	{
 		"Shougo/ddc.vim",
 		dependencies = {
-			"denops/denops.vim",
+			"vim-denops/denops.vim", -- denops.vim を最初にロード
 			"Shougo/ddc-source-lsp",
 			"Shougo/ddc-ui-native",
 			"Shougo/ddc-source-around",
@@ -34,6 +34,16 @@ return {
 			"Shougo/ddc-filter-sorter_rank",
 		},
 		config = function()
+			-- ddc-source-lsp をロード
+			require("ddc_source_lsp").setup()
+
+			-- LSPクライアントの設定
+			local capabilities = require("ddc_source_lsp").make_client_capabilities()
+			require("lspconfig").denols.setup({
+				capabilities = capabilities,
+			})
+
+			-- ddc.vim の設定
 			vim.cmd([[
 				call ddc#custom#patch_global('ui', 'native')
 				call ddc#custom#patch_global('sources', ['lsp', 'around', 'file'])
@@ -48,24 +58,25 @@ return {
 					\ 'file': {
 					\   'mark': 'F',
 					\   'isVolatile': v:true,
-					\   'forceCompletionPattern': '\S/\S*',
+					\   'forceCompletionPattern': '\S/\S*'
 					\ },
 					\ 'lsp': {
 					\   'mark': 'lsp',
-					\   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
-					\ },
+					\   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
+					\ }
 					\ })
 				call ddc#custom#patch_filetype(
 					\ ['ps1', 'dosbatch', 'autohotkey', 'registry'], {
 					\ 'sourceOptions': {
 					\   'file': {
-					\     'forceCompletionPattern': '\S\\\S*',
-					\   },
+					\     'forceCompletionPattern': '\S\\\S*'
+					\   }
 					\ },
 					\ 'sourceParams': {
 					\   'file': {
-					\     'mode': 'unix',
-					\   },
+					\     'mode': 'unix'
+					\   }
+					\ }
 					\ })
 				call ddc#enable()
 			]])
