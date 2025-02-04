@@ -34,9 +34,6 @@ return {
 			"Shougo/ddc-filter-sorter_rank",
 		},
 		config = function()
-			-- ddc-source-lsp をロード
-			require("ddc_source_lsp").setup()
-
 			-- LSPクライアントの設定
 			local capabilities = require("ddc_source_lsp").make_client_capabilities()
 			require("lspconfig").denols.setup({
