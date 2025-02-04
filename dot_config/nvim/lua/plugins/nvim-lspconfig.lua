@@ -28,12 +28,13 @@ return {
 			"vim-denops/denops.vim", -- denops.vim を最初にロード
 			"Shougo/ddc-source-lsp",
 			"Shougo/ddc-ui-native",
-			'LumaKernel/ddc-tabnine',
+			"LumaKernel/ddc-tabnine",
 			"Shougo/ddc-source-around",
 			"LumaKernel/ddc-source-file",
 			"matsui54/ddc-source-buffer",
 			"Shougo/ddc-filter-matcher_head",
 			"Shougo/ddc-filter-sorter_rank",
+			"Shougo/ddc-filter-converter_remove_overlap",
 		},
 		config = function()
 			-- LSPクライアントの設定
@@ -49,7 +50,8 @@ return {
 				call ddc#custom#patch_global('sourceOptions', {
 					\ '_': {
 					\   'matchers': ['matcher_head'],
-					\   'sorters': ['sorter_rank']
+					\   'sorters': ['sorter_rank'],
+					\   'converters': ['converter_remove_overlap'],
 					\ },
 					\  'tabnine': {
 					\    'mark': 'TN',
