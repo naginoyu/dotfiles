@@ -30,7 +30,7 @@ return {
 			"Shougo/ddc-ui-native",
 			"Shougo/ddc-source-around",
 			"LumaKernel/ddc-source-file",
-			"matsui/ddc-source-buffer",
+			"matsui54/ddc-source-buffer",
 			"Shougo/ddc-filter-matcher_head",
 			"Shougo/ddc-filter-sorter_rank",
 		},
