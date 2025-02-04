@@ -28,6 +28,7 @@ return {
 			"vim-denops/denops.vim", -- denops.vim を最初にロード
 			"Shougo/ddc-source-lsp",
 			"Shougo/ddc-ui-native",
+			'LumaKernel/ddc-tabnine',
 			"Shougo/ddc-source-around",
 			"LumaKernel/ddc-source-file",
 			"matsui54/ddc-source-buffer",
@@ -44,11 +45,15 @@ return {
 			-- ddc.vim の設定
 			vim.cmd([[
 				call ddc#custom#patch_global('ui', 'native')
-				call ddc#custom#patch_global('sources', ['lsp', 'around', 'file', 'buffer'])
+				call ddc#custom#patch_global('sources', ['lsp', 'tabnine', 'around', 'file', 'buffer'])
 				call ddc#custom#patch_global('sourceOptions', {
 					\ '_': {
 					\   'matchers': ['matcher_head'],
 					\   'sorters': ['sorter_rank']
+					\ },
+					\  'tabnine': {
+					\    'mark': 'TN',
+					\    'maxItems': 5,
 					\ },
 					\ 'around': {
 					\   'mark': 'A'
