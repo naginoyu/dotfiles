@@ -49,3 +49,4 @@ alias la="ls -a"
 
 # git
 alias g="git"
+eval "$(zellij setup --generate-auto-start zsh)"
