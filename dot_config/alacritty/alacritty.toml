@@ -10,7 +10,7 @@ multiplier = 5
 
 [shell]
 program = "/bin/zsh"
-args = ["-l", "-c", "zellij attach --index 0 --create"]
+args = ["zellij"]
 
 [font]
 size = 11.0
