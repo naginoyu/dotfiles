@@ -8,15 +8,7 @@ return {
 			lspconfig.html.setup({})
 			lspconfig.cssls.setup({})
 			lspconfig.ts_ls.setup({})
-			lspconfig.tailwindcss.setup({
-				capabilities = capabilities,
-				root_dir = util.root_pattern(
-					"tailwind.config.js",
-					"tailwind.config.cjs",
-					"tailwind.config.mjs",
-					"tailwind.config.ts"
-				),
-			})
+			lspconfig.tailwindcss.setup({})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(args)
