@@ -6,9 +6,11 @@ case ${OSTYPE} in
     # setting for mac
     . /usr/local/opt/asdf/libexec/asdf.sh
     ;;
-linux*)
+    linux*)
     # setting for linux
-    . /opt/asdf-vm/asdf.sh
+    export PATH="$HOME/bin:$PATH"
+    export ASDF_DATA_DIR="/home/kzm//.asdf"
+    export PATH="$ASDF_DATA_DIR/shims:$PATH"
     ;;
 esac
 
