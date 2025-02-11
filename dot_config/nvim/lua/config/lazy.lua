@@ -33,7 +33,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lsp.none-ls" },
     { import = "lazyvim.plugins.extras.editor.telescope" },
     { import = "lazyvim.plugins.extras.util.chezmoi" },
-    { import = "lazyvim.plugins.extras.ai.tabnine" },
+    -- { import = "lazyvim.plugins.extras.ai.tabnine" },
 
     -- import/override with your plugins
     { import = "plugins" },
