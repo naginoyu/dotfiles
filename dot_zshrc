@@ -11,6 +11,8 @@ case ${OSTYPE} in
     export PATH="$HOME/bin:$PATH"
     export ASDF_DATA_DIR="/home/kzm//.asdf"
     export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
+    export PATH=$HOME/bin:/usr/local/bin:$PATH
     ;;
 esac
 
